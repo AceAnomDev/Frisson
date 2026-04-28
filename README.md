@@ -6,39 +6,39 @@
 
 <p align="center">
   <a href="https://t.me/musical_guitar_bot">
-    <img src="https://img.shields.io/badge/Telegram-Открыть%20бота-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Open in Telegram"/>
+    <img src="https://img.shields.io/badge/Telegram-Open%20Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Open in Telegram"/>
   </a>
 </p>
 
-Telegram-бот онлайн-школы гитары **«Фриссон»** — помогает потенциальным ученикам выбрать преподавателя и записаться на занятия.
+Telegram bot for the **Frisson** online guitar school — helps prospective students choose a teacher and sign up for lessons.
 
 ---
 
-## Структура проекта
+## Project structure
 
 ```
 frisson-guitar-bot/
-├── assets/                    # Фотографии преподавателей
+├── assets/                    # Teacher photos
 │
 ├── bot/
 │   ├── data/
-│   │   └── teachers.py        # Данные о преподавателях и инструментах
+│   │   └── teachers.py        # Teacher and instrument data
 │   ├── handlers/
-│   │   ├── __init__.py        # Регистрация всех хендлеров
+│   │   ├── __init__.py        # Handler registration
 │   │   ├── start.py           # /start, join, no
-│   │   ├── teachers.py        # Листание преподавателей (FSM)
-│   │   ├── enrollment.py      # Оценка бота (enroll, rate_N)
+│   │   ├── teachers.py        # Teacher browsing (FSM)
+│   │   ├── enrollment.py      # Bot rating (enroll, rate_N)
 │   │   ├── feedback.py        # /feedback (FSM)
 │   │   └── commands.py        # /help, /musical
 │   ├── keyboards/
-│   │   └── inline.py          # Все inline-клавиатуры
+│   │   └── inline.py          # All inline keyboards
 │   ├── middlewares/
-│   │   └── logging.py         # Логирование входящих апдейтов
+│   │   └── logging.py         # Incoming update logging
 │   └── states/
-│       └── user.py            # FSM-состояния (TeacherBrowse, FeedbackForm)
+│       └── user.py            # FSM states (TeacherBrowse, FeedbackForm)
 │
-├── config.py                  # Загрузка переменных окружения
-├── main.py                    # Точка входа
+├── config.py                  # Environment variable loader
+├── main.py                    # Entry point
 ├── requirements.txt
 ├── .env.example
 └── .gitignore
@@ -46,16 +46,16 @@ frisson-guitar-bot/
 
 ---
 
-## Быстрый старт
+## Quick start
 
-### 1. Клонировать репозиторий
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-org/frisson-guitar-bot.git
 cd frisson-guitar-bot
 ```
 
-### 2. Создать виртуальное окружение
+### 2. Create a virtual environment
 
 ```bash
 python -m venv .venv
@@ -63,27 +63,27 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Настроить переменные окружения
+### 3. Configure environment variables
 
 ```bash
 cp .env.example .env
-# отредактируйте .env, заполнив все значения
+# edit .env and fill in all values
 ```
 
-| Переменная          | Описание                                    |
-|---------------------|---------------------------------------------|
-| `BOT_TOKEN`         | Токен бота от @BotFather                    |
-| `ADMIN_ID`          | Telegram ID администратора (для оценок)     |
-| `FEEDBACK_ADMIN_ID` | Telegram ID получателя текстовых отзывов    |
-| `CHANNEL_ID`        | ID Telegram-канала школы                    |
-| `MANAGER_LINK`      | Ссылка на менеджера (`https://t.me/...`)    |
-| `CHANNEL_LINK`      | Ссылка на канал (`https://t.me/...`)        |
+| Variable            | Description                                      |
+|---------------------|--------------------------------------------------|
+| `BOT_TOKEN`         | Bot token from @BotFather                        |
+| `ADMIN_ID`          | Telegram ID of the admin (receives ratings)      |
+| `FEEDBACK_ADMIN_ID` | Telegram ID of the feedback recipient            |
+| `CHANNEL_ID`        | School's Telegram channel ID                     |
+| `MANAGER_LINK`      | Link to the manager (`https://t.me/...`)         |
+| `CHANNEL_LINK`      | Link to the channel (`https://t.me/...`)         |
 
-### 4. Добавить фото преподавателей
+### 4. Add teacher photos
 
-Поместите файлы в `assets/`.
+Place image files in `assets/`.
 
-### 5. Запустить бота
+### 5. Run the bot
 
 ```bash
 python main.py
@@ -91,20 +91,20 @@ python main.py
 
 ---
 
-## Команды бота
+## Bot commands
 
-| Команда      | Описание                                          |
-|--------------|---------------------------------------------------|
-| `/start`     | Главное приветствие                               |
-| `/musical`   | Выбор инструмента напрямую                        |
-| `/feedback`  | Оставить текстовый отзыв о занятиях               |
-| `/help`      | Информация о школе и контакты                     |
+| Command      | Description                                      |
+|--------------|--------------------------------------------------|
+| `/start`     | Main welcome message                             |
+| `/musical`   | Go straight to instrument selection              |
+| `/feedback`  | Leave a text review about lessons                |
+| `/help`      | School info and contacts                         |
 
 ---
 
-## Технологии
+## Tech stack
 
 - **Python 3.11+**
-- **aiogram 2.x** — асинхронный Telegram Bot API фреймворк
-- **python-dotenv** — управление конфигурацией через `.env`
-- **FSM (Finite State Machine)** — управление состоянием диалога
+- **aiogram 2.x** — async Telegram Bot API framework
+- **python-dotenv** — configuration management via `.env`
+- **FSM (Finite State Machine)** — dialog state management
