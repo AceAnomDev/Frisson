@@ -1,7 +1,7 @@
 # 🎸 Frisson Guitar Bot
 
 <p align="center">
-  <img src="assets/avatar.jpg" width="180" alt="Frisson Bot Avatar" />
+  <img src="assets/images/avatar.jpg" width="180" alt="Frisson Bot Avatar" />
 </p>
 
 <p align="center">
